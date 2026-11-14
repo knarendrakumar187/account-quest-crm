@@ -1,0 +1,5 @@
+{
+  "id": "network_plan",
+  "name": "network_plan.txt",
+  "text": "ALDERMOOR GROUP IT: NETWORK SEGMENTATION PLAN (extract)\nOwner: Group IT infrastructure\nStart: in four months from today. Rollout plant by plant over six weeks.\n\nSummary\n- All plant OT and IoT devices move to segmented VLANs with default-deny outbound.\n- Exceptions must be requested per device class with ports, destinations and an owner.\n\nException register (current)\n| Device class        | Plants | Ports / destinations     | Owner     | Status   |\n| CCTV NVR            | all    | 443 to vendor cloud      | Security  | Approved |\n| Access control      | all    | 8443 to HQ               | Facilities| Approved |\n| Drone docks         | ?      | ?                        | ?         | NOT LISTED |\n\nKnown link quality issues: plants 11, 12, 13, 14 (4G backup only, frequent drops).\nNote: IT was not involved in the drone dock installs.\n"
+}
