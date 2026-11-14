@@ -1,5 +1,8 @@
 # Account CRM: thinking doc
 
+Live CRM: https://account-quest-crm.vercel.app
+Code: https://github.com/knarendrakumar187/account-quest-crm
+
 ## What it does, and for whom
 
 It is the page a new CSM hands their manager on Monday for two inherited accounts: Eastern Counties Police Alliance (£, 35 docks) and Aldermoor Industrial Group (€, 14 docks). For each account it answers five questions: what the book is worth, who holds the power, what to do first, what is about to go wrong, and what we still do not know. Every number and claim carries the id it came from. Clicking the id opens the source: the fact as the person said it, the file, the call note, the contract, the live event or the request row.
@@ -26,4 +29,4 @@ The token stays on the server (Vercel functions). The page loads a stored copy, 
 
 ## How I used AI
 
-I used Claude (Claude Code) as a pair. It played the discovery game with me, wrote the MCP client, the server routes and the page, and drafted the cited rules from the data. I chose what counts as backed, who holds the power and the order of the moves, and checked the cited ids against the data. The page's own integrity check confirms that every id it shows exists.
+I used Claude (Claude Code) heavily, under my direction. It played most of the discovery game in my browser, wrote the MCP client, the server routes and the page, and drafted the cited rules (power map, moves, gaps) from the data. I set the goals, made the calls on publishing and hosting, and reviewed the result. The page's own integrity check confirms that every id it cites exists in the data, so no rule rests on an invented source.
