@@ -330,10 +330,11 @@
     try { state.account = localStorage.getItem("acc") || "A"; } catch {}
     render(); renderStatus();
     // Stagger first calls; the CDN keeps each to one MCP call per window.
+    // One MCP call a minute per token: space the tools at least 65s apart.
     pull("signals");
-    setTimeout(() => pull("accounts"), 2500);
-    setTimeout(() => pull("notes"), 5000);
-    setInterval(() => pull("signals"), 120000);
+    setTimeout(() => pull("accounts"), 65000);
+    setTimeout(() => pull("notes"), 130000);
+    setInterval(() => pull("signals"), 195000);
     setInterval(() => pull("accounts"), 600000);
   }
   boot();
