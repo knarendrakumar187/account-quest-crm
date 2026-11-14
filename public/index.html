@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Account CRM</title>
+<meta name="description" content="Live CRM for Eastern Counties Police Alliance and Aldermoor Industrial Group. Every number cites its source.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f5f1;--card:#fff;--ink:#1d1f23;--muted:#6b6f76;--line:#e4e2dc;--accent:#c2410c;--good:#15803d;--warn:#b45309;--bad:#b91c1c;--chip:#eef2ff;--chipink:#3730a3;}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15171a;--card:#1e2125;--ink:#e8e9eb;--muted:#9aa0a8;--line:#30343a;--accent:#fb923c;--good:#4ade80;--warn:#fbbf24;--bad:#f87171;--chip:#272b45;--chipink:#c7d2fe;}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 Inter,system-ui,sans-serif}
+header{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:1px solid var(--line);padding:12px 16px;display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+header h1{font-size:16px;margin:0}.tabs{display:flex;gap:6px}.tab{border:1px solid var(--line);background:transparent;color:var(--ink);padding:6px 12px;border-radius:999px;cursor:pointer;font:inherit}
+.tab.on{background:var(--accent);border-color:var(--accent);color:#fff}#status,#asof{color:var(--muted);font-size:12px}#asof{margin-left:auto}
+main{max-width:1180px;margin:0 auto;padding:16px}
+.hero{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;margin:4px 0 16px}.hero h2{margin:0 0 4px;font-size:22px}
+.kpis{display:flex;gap:10px;flex-wrap:wrap}.kpi{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;min-width:150px}
+.kpi span{display:block;color:var(--muted);font-size:12px}.kpi b{font-size:20px}.kpi small{display:block;color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:16px;overflow-x:auto}
+.card h3{margin:0 0 12px;font-size:16px;display:flex;gap:8px;align-items:center}.card h3 i{font-style:normal;background:var(--accent);color:#fff;border-radius:50%;width:24px;height:24px;display:grid;place-items:center;font-size:13px}
+table{width:100%;border-collapse:collapse;margin-bottom:10px}th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}th{font-size:12px;color:var(--muted);font-weight:600}
+.r{text-align:right;white-space:nowrap}.tot td{font-weight:700}.apart th:first-child{color:var(--warn)}
+.note{color:var(--muted);font-size:12.5px;margin:6px 0 0}.muted{color:var(--muted)}.warn{color:var(--warn)}
+.src{border:0;background:var(--chip);color:var(--chipink);font:11px/1.6 ui-monospace,Menlo,monospace;padding:0 6px;border-radius:4px;margin:2px 3px 2px 0;cursor:pointer}
+.src.missing{background:#fee2e2;color:#991b1b;text-decoration:line-through}.srcs{display:inline}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:12px}.deal{border:1px solid var(--line);border-radius:10px;padding:12px}.deal h4{margin:0 0 8px;font-size:14px}
+.deal ul{list-style:none;margin:0;padding:0}.deal li{padding:6px 0;border-top:1px dashed var(--line)}
+.role{display:inline-block;font-size:11px;font-weight:600;text-transform:uppercase;padding:1px 6px;border-radius:4px;background:#f1f5f9;color:#334155;margin-right:4px}
+.role.decides{background:#dcfce7;color:#166534}.role.pays{background:#dbeafe;color:#1e40af}.role.uses{background:#f3e8ff;color:#6b21a8}.role.could_block{background:#fee2e2;color:#991b1b}
+.rel{font-size:11px;padding:0 6px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}.rel.ally{color:var(--good);border-color:var(--good)}.rel.warm{color:var(--warn);border-color:var(--warn)}.rel.guarded{color:var(--bad);border-color:var(--bad)}
+.moves{margin:0;padding:0;list-style:none}.moves li{border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-bottom:8px}.moves li.top{border-color:var(--accent);border-width:2px}
+.mmeta{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12.5px;color:var(--muted);margin:4px 0}.late{color:var(--bad);font-weight:600}.soon{color:var(--warn);font-weight:600}
+.tag{border:1px solid var(--line);border-radius:4px;padding:0 5px}.mwhy{font-size:13px}
+.save{margin-top:6px;font:inherit;font-size:12px;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:6px;padding:3px 10px;cursor:pointer}
+.risks{list-style:none;margin:0;padding:0}.risks li{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+.sev{font-size:11px;font-weight:700;text-transform:uppercase;min-width:42px;text-align:center;border-radius:4px;height:fit-content;padding:1px 4px}
+.risks .high .sev{background:#fee2e2;color:#991b1b}.risks .med .sev{background:#fef3c7;color:#92400e}.risks .low .sev{background:#f1f5f9;color:#475569}
+aside.side{display:grid;grid-template-columns:1fr;gap:16px}.side ul{margin:0;padding-left:18px}
+#integrity{font-size:12px;margin:0 0 12px}#integrity.good{color:var(--good)}#integrity.bad{color:var(--bad)}
+#drawer{position:fixed;right:0;top:0;bottom:0;width:min(560px,100%);background:var(--card);border-left:1px solid var(--line);box-shadow:-8px 0 24px rgba(0,0,0,.12);transform:translateX(105%);transition:transform .2s;z-index:10;display:flex;flex-direction:column}
+#drawer.open{transform:none}#drawer header{position:static}#drawer h3{margin:0;font:600 14px ui-monospace,Menlo,monospace;word-break:break-all}#drawer .kind{color:var(--muted);font-size:12px;width:100%}
+#drawer pre{flex:1;overflow:auto;margin:0;padding:16px;white-space:pre-wrap;font:12px/1.5 ui-monospace,Menlo,monospace}.x{margin-left:auto;font:inherit;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:6px;cursor:pointer}
+footer{color:var(--muted);font-size:12px;text-align:center;padding:24px}
+@media (max-width:640px){#asof{margin-left:0}.kpi{min-width:0;flex:1}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Account CRM</h1>
+  <div class="tabs">
+    <button class="tab" data-acc="A">Eastern Counties Police Alliance</button>
+    <button class="tab" data-acc="B">Aldermoor Industrial Group</button>
+  </div>
+  <span id="asof"></span>
+  <span id="status" style="width:100%"></span>
+</header>
+<main>
+  <p id="integrity"></p>
+  <div id="acct"><p class="muted">Loading…</p></div>
+  <section class="card"><h3>Notes written back to the MCP</h3><ul id="notes"></ul>
+    <p class="note">“Save as next step” on any move writes it back through write_note. Notes refresh within a few minutes.</p></section>
+</main>
+<footer>Every number cites the id it came from. Click an id to read the source. Data: Account Quest MCP, read on the server; refreshed live.</footer>
+<div id="drawer" role="dialog" aria-label="Source">
+  <header><h3></h3><button class="x" aria-label="Close">Close</button><span class="kind"></span></header>
+  <pre></pre>
+</div>
+<script src="/rules.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>

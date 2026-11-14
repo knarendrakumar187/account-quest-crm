@@ -1,0 +1,32 @@
+{
+  "player_id": "04fb9035-101b-4409-9a61-6ecd5bf88ad4",
+  "your_morning_over": true,
+  "new_accounts": [],
+  "pack": [
+    {
+      "account": "A",
+      "open": true
+    },
+    {
+      "account": "B",
+      "open": true
+    }
+  ],
+  "signals": 3,
+  "paths": [
+    "/me",
+    "/export",
+    "/files/:id",
+    "/pack",
+    "/pack/team",
+    "/pack/:account",
+    "/pack/:account/all",
+    "/pack/:account/<path>",
+    "/pack/search?q=",
+    "/pack/feature-requests",
+    "/pack/release-notes",
+    "/signals",
+    "/schema",
+    "/notes (GET, POST)"
+  ]
+}
