@@ -29,4 +29,4 @@ The token stays on the server (Vercel functions). The page loads a stored copy, 
 
 ## How I used AI
 
-I used Claude (Claude Code) heavily, under my direction. It played most of the discovery game in my browser, wrote the MCP client, the server routes and the page, and drafted the cited rules (power map, moves, gaps) from the data. I set the goals, made the calls on publishing and hosting, and reviewed the result. The page's own integrity check confirms that every id it cites exists in the data, so no rule rests on an invented source.
+I used Claude (Claude Code) heavily, under my direction. It wrote the MCP client, the server routes and the page, and drafted the cited rules (power map, moves, gaps) from the data. I set the goals, made the calls on publishing and hosting, and reviewed the result. The page's own integrity check confirms that every id it cites exists in the data, so no rule rests on an invented source.
